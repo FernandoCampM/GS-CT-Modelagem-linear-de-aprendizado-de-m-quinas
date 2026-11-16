@@ -114,7 +114,9 @@ def barras_mensais(diaria: pd.DataFrame, dias_descartados: list) -> tuple[str, l
         })
     tab = pd.DataFrame(registros)
 
-    fig, ax = plt.subplots(figsize=(11, 5.8))
+    # Tamanho próximo ao que a figura ocupa no PDF (17 cm ≈ 6,7 pol), para que as fontes
+    # não encolham demais quando a imagem é reduzida para caber na página.
+    fig, ax = plt.subplots(figsize=(7.6, 5.0))
     x = range(len(tab))
     completo = (tab["dias_descartados"] == 0) & (~tab["ultimo_mes_da_serie"])
     cores = [AZUL if c else AZUL_CLARO for c in completo]
@@ -127,22 +129,23 @@ def barras_mensais(diaria: pd.DataFrame, dias_descartados: list) -> tuple[str, l
             b.set_linewidth(0.6)
     for xi, r in zip(x, tab.itertuples()):
         ax.text(xi, r.chuva_total_mm + 4, num_br(r.chuva_total_mm, 0), ha="center", va="bottom",
-                fontsize=7.5, color=TEXTO)
+                fontsize=8, color=TEXTO)
         if r.dias_descartados:
-            ax.text(xi, r.chuva_total_mm + 22, f"−{r.dias_descartados} d", ha="center", va="bottom",
-                    fontsize=7, color=TEXTO_2)
+            ax.text(xi, r.chuva_total_mm + 24, f"−{r.dias_descartados} d", ha="center", va="bottom",
+                    fontsize=8, color=TEXTO_2, weight="bold")
 
     # Separação visual entre os anos.
     corte = tab.index[tab["ano"] == 2026][0] - 0.5
     ax.axvline(corte, color=TEXTO_2, linewidth=0.8)
-    topo = tab["chuva_total_mm"].max() * 1.18
+    topo = tab["chuva_total_mm"].max() * 1.22
     ax.text(corte - 0.3, topo * 0.97, "2025", ha="right", va="top", fontsize=10, color=TEXTO_2, weight="bold")
     ax.text(corte + 0.3, topo * 0.97, "2026", ha="left", va="top", fontsize=10, color=TEXTO_2, weight="bold")
 
     ax.set_xticks(list(x))
-    ax.set_xticklabels(tab["rotulo"], rotation=45, ha="right", fontsize=8.5)
+    ax.set_xticklabels(tab["rotulo"], rotation=45, ha="right", rotation_mode="anchor", fontsize=9)
     ax.set_ylim(0, topo)
     ax.set_xlim(-0.6, len(tab) - 0.4)
+    ax.tick_params(axis="y", labelsize=9)
     ax.set_title("Precipitação total por mês\n"
                  "Estação A701 (São Paulo - Mirante), jan/2025 a out/2026", loc="left")
     ax.set_xlabel("Mês/ano")
@@ -150,11 +153,13 @@ def barras_mensais(diaria: pd.DataFrame, dias_descartados: list) -> tuple[str, l
     legenda = [Patch(facecolor=AZUL, label="Mês com todos os dias válidos"),
                Patch(facecolor=AZUL_CLARO, edgecolor=AZUL, hatch="////",
                      label="Mês possivelmente incompleto")]
-    ax.legend(handles=legenda, frameon=False, loc="upper left", fontsize=8.5,
-              bbox_to_anchor=(0.16, 0.9))
+    # Legenda no alto, na região livre entre fev/25 e dez/25.
+    ax.legend(handles=legenda, frameon=True, facecolor="white", edgecolor="none", framealpha=0.9,
+              loc="upper left", bbox_to_anchor=(0.12, 0.88), fontsize=9)
     nome = finalizar(fig, ax, "fig2_precipitacao_mensal.png",
-                     f"Mês possivelmente incompleto: tem dias descartados (\"−n d\" = nº de dias com < 20 h de dados) ou é o último mês da série,\n"
-                     f"{MESES_PT[ultimo.month - 1]}/{ultimo.year} (último dado: 31/10/2026, 20h local)")
+                     "\"−n d\" = nº de dias descartados no mês (< 20 h de dados).\n"
+                     f"Último mês da série: {MESES_PT[ultimo.month - 1]}/{ultimo.year} "
+                     "(último dado: 31/10/2026, 20h local)")
     return nome, tab.to_dict(orient="records")
 
 
