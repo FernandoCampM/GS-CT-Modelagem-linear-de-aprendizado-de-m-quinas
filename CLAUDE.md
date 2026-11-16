@@ -75,7 +75,13 @@ Dos 11 dias com pico > P95, 6 não passariam do P95 do volume diário.
   Hyndman & Fan (1996), Pimentel-Gomes (1985).
 - Melhorias opcionais anotadas: a Figura 2 fica pequena no PDF (rótulos difíceis de ler); a nota
   de fonte aparece duas vezes (dentro da imagem e embaixo da figura).
-- Nada foi enviado ao Portal; o envio é do usuário. Não é um repositório git.
+- Nada foi enviado ao Portal; o envio é do usuário.
+- **Repositório git:** https://github.com/FernandoCampM/GS-CT-Modelagem-linear-de-aprendizado-de-m-quinas
+  (público, branch `main`). Os ZIPs do INMET ficam fora do git (`.gitignore`); os CSVs da A701 extraídos
+  estão versionados. `.gitattributes` marca CSV/JSON como `-text` para não alterar os bytes dos dados.
+  No outro PC: `git clone` do link acima e siga a seção 0.2. Faça commit/push só quando o usuário pedir.
+- A pasta local no PC original se chamava `GSPROMPT`; o usuário pediu para renomeá-la para `GSModelagem`
+  (feito por ele, fora da sessão). Nenhum arquivo depende do nome da pasta.
 
 ### 0.6 Regras ao fazer alterações na revisão
 - Mude em `src/`, rode os scripts afetados **e todos os seguintes** (o 06 sempre por último),
