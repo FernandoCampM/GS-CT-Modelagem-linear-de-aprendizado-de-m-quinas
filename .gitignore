@@ -1,0 +1,9 @@
+# Ambiente virtual (não é portátil; recrie com requirements.txt)
+.venv/
+__pycache__/
+*.pyc
+
+# ZIPs do INMET (~170 MB, um CSV por estação do Brasil).
+# O script src/01_baixar_dados.py baixa de novo; os CSVs da A701 extraídos ficam no repositório.
+dados/brutos/*.zip
+dados/brutos/*.part

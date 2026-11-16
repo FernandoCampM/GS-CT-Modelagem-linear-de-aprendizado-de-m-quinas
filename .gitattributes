@@ -1,0 +1,4 @@
+# Dados brutos e tabelas: manter os bytes exatamente como foram gerados/baixados
+*.csv -text
+*.CSV -text
+*.json -text

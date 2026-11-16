@@ -1,0 +1,1318 @@
+{
+  "tratamento": {
+    "metadados_estacao": {
+      "REGIAO": "SE",
+      "UF": "SP",
+      "ESTACAO": "SAO PAULO - MIRANTE",
+      "CODIGO (WMO)": "A701",
+      "LATITUDE": "-23,4962888",
+      "LONGITUDE": "-46,6200666",
+      "ALTITUDE": "785,64",
+      "DATA DE FUNDACAO": "25/07/06"
+    },
+    "arquivos_brutos": [
+      "INMET_SE_SP_A701_SAO PAULO - MIRANTE_01-01-2025_A_31-12-2025.CSV",
+      "INMET_SE_SP_A701_SAO PAULO - MIRANTE_01-01-2026_A_31-10-2026.CSV"
+    ],
+    "periodo_inicio": "2025-01-01",
+    "periodo_fim": "2026-10-31",
+    "ultimo_registro_utc": "2026-10-31 23:00:00",
+    "fuso": "Horário de Brasília (UTC-3)",
+    "horas_total": 16053,
+    "horas_faltantes": 133,
+    "dias_total": 669,
+    "dias_validos": 664,
+    "dias_descartados": 5,
+    "datas_descartadas": [
+      {
+        "data": "2025-12-02",
+        "horas_validas": 9
+      },
+      {
+        "data": "2026-09-14",
+        "horas_validas": 18
+      },
+      {
+        "data": "2026-09-15",
+        "horas_validas": 14
+      },
+      {
+        "data": "2026-10-21",
+        "horas_validas": 19
+      },
+      {
+        "data": "2026-10-26",
+        "horas_validas": 10
+      }
+    ],
+    "fragmentos_fora_do_periodo": [
+      {
+        "data": "2024-12-31",
+        "horas": 3
+      }
+    ],
+    "criterio_dia_valido_horas": 20,
+    "criterio_dia_chuvoso_mm": 1.0,
+    "dias_chuvosos": 207,
+    "dias_secos": 457,
+    "dias_com_alguma_chuva": 292,
+    "pct_dias_chuvosos": 31.17,
+    "chuva_total_mm": 2860.2,
+    "chuva_total_por_ano_mm": {
+      "2025": 1453.2,
+      "2026": 1407.0
+    },
+    "top5_chuvas_diarias": [
+      {
+        "data": "2025-01-24",
+        "chuva_dia_mm": 125.6,
+        "pico_mm_h": 82.0,
+        "horas_com_chuva": 5
+      },
+      {
+        "data": "2026-09-12",
+        "chuva_dia_mm": 74.0,
+        "pico_mm_h": 26.4,
+        "horas_com_chuva": 11
+      },
+      {
+        "data": "2026-10-25",
+        "chuva_dia_mm": 65.8,
+        "pico_mm_h": 18.2,
+        "horas_com_chuva": 16
+      },
+      {
+        "data": "2025-02-01",
+        "chuva_dia_mm": 63.6,
+        "pico_mm_h": 18.8,
+        "horas_com_chuva": 15
+      },
+      {
+        "data": "2025-12-09",
+        "chuva_dia_mm": 59.4,
+        "pico_mm_h": 13.2,
+        "horas_com_chuva": 19
+      }
+    ]
+  },
+  "tabelas_frequencia": {
+    "populacao": "dias chuvosos (chuva_dia_mm >= 1,0 mm), dias válidos",
+    "n_dias_chuvosos": 207,
+    "discreta": {
+      "variavel": "horas_com_chuva",
+      "unidade": "h",
+      "soma_fi": 207,
+      "soma_fri": 1.0,
+      "linhas": [
+        {
+          "horas_com_chuva": 1,
+          "fi": 17,
+          "fri": 0.082126,
+          "fri_%": 8.21256,
+          "Fi": 17,
+          "Fri": 0.082126,
+          "Fri_%": 8.21256
+        },
+        {
+          "horas_com_chuva": 2,
+          "fi": 25,
+          "fri": 0.120773,
+          "fri_%": 12.077295,
+          "Fi": 42,
+          "Fri": 0.202899,
+          "Fri_%": 20.289855
+        },
+        {
+          "horas_com_chuva": 3,
+          "fi": 37,
+          "fri": 0.178744,
+          "fri_%": 17.874396,
+          "Fi": 79,
+          "Fri": 0.381643,
+          "Fri_%": 38.164251
+        },
+        {
+          "horas_com_chuva": 4,
+          "fi": 24,
+          "fri": 0.115942,
+          "fri_%": 11.594203,
+          "Fi": 103,
+          "Fri": 0.497585,
+          "Fri_%": 49.758454
+        },
+        {
+          "horas_com_chuva": 5,
+          "fi": 18,
+          "fri": 0.086957,
+          "fri_%": 8.695652,
+          "Fi": 121,
+          "Fri": 0.584541,
+          "Fri_%": 58.454106
+        },
+        {
+          "horas_com_chuva": 6,
+          "fi": 16,
+          "fri": 0.077295,
+          "fri_%": 7.729469,
+          "Fi": 137,
+          "Fri": 0.661836,
+          "Fri_%": 66.183575
+        },
+        {
+          "horas_com_chuva": 7,
+          "fi": 16,
+          "fri": 0.077295,
+          "fri_%": 7.729469,
+          "Fi": 153,
+          "Fri": 0.73913,
+          "Fri_%": 73.913043
+        },
+        {
+          "horas_com_chuva": 8,
+          "fi": 10,
+          "fri": 0.048309,
+          "fri_%": 4.830918,
+          "Fi": 163,
+          "Fri": 0.78744,
+          "Fri_%": 78.743961
+        },
+        {
+          "horas_com_chuva": 9,
+          "fi": 4,
+          "fri": 0.019324,
+          "fri_%": 1.932367,
+          "Fi": 167,
+          "Fri": 0.806763,
+          "Fri_%": 80.676329
+        },
+        {
+          "horas_com_chuva": 10,
+          "fi": 6,
+          "fri": 0.028986,
+          "fri_%": 2.898551,
+          "Fi": 173,
+          "Fri": 0.835749,
+          "Fri_%": 83.574879
+        },
+        {
+          "horas_com_chuva": 11,
+          "fi": 9,
+          "fri": 0.043478,
+          "fri_%": 4.347826,
+          "Fi": 182,
+          "Fri": 0.879227,
+          "Fri_%": 87.922705
+        },
+        {
+          "horas_com_chuva": 12,
+          "fi": 4,
+          "fri": 0.019324,
+          "fri_%": 1.932367,
+          "Fi": 186,
+          "Fri": 0.898551,
+          "Fri_%": 89.855072
+        },
+        {
+          "horas_com_chuva": 13,
+          "fi": 4,
+          "fri": 0.019324,
+          "fri_%": 1.932367,
+          "Fi": 190,
+          "Fri": 0.917874,
+          "Fri_%": 91.78744
+        },
+        {
+          "horas_com_chuva": 14,
+          "fi": 2,
+          "fri": 0.009662,
+          "fri_%": 0.966184,
+          "Fi": 192,
+          "Fri": 0.927536,
+          "Fri_%": 92.753623
+        },
+        {
+          "horas_com_chuva": 15,
+          "fi": 3,
+          "fri": 0.014493,
+          "fri_%": 1.449275,
+          "Fi": 195,
+          "Fri": 0.942029,
+          "Fri_%": 94.202899
+        },
+        {
+          "horas_com_chuva": 16,
+          "fi": 5,
+          "fri": 0.024155,
+          "fri_%": 2.415459,
+          "Fi": 200,
+          "Fri": 0.966184,
+          "Fri_%": 96.618357
+        },
+        {
+          "horas_com_chuva": 17,
+          "fi": 3,
+          "fri": 0.014493,
+          "fri_%": 1.449275,
+          "Fi": 203,
+          "Fri": 0.980676,
+          "Fri_%": 98.067633
+        },
+        {
+          "horas_com_chuva": 18,
+          "fi": 2,
+          "fri": 0.009662,
+          "fri_%": 0.966184,
+          "Fi": 205,
+          "Fri": 0.990338,
+          "Fri_%": 99.033816
+        },
+        {
+          "horas_com_chuva": 19,
+          "fi": 1,
+          "fri": 0.004831,
+          "fri_%": 0.483092,
+          "Fi": 206,
+          "Fri": 0.995169,
+          "Fri_%": 99.516908
+        },
+        {
+          "horas_com_chuva": 22,
+          "fi": 1,
+          "fri": 0.004831,
+          "fri_%": 0.483092,
+          "Fi": 207,
+          "Fri": 1.0,
+          "Fri_%": 100.0
+        }
+      ]
+    },
+    "continua": {
+      "variavel": "chuva_dia_mm",
+      "unidade": "mm",
+      "soma_fi": 207,
+      "soma_fri": 1.0,
+      "sturges": {
+        "n": 207,
+        "k_bruto": 8.6937,
+        "k": 9,
+        "minimo": 1.0,
+        "maximo": 125.6,
+        "amplitude_total": 124.6,
+        "h_bruto": 13.8444,
+        "h": 13.9,
+        "limites": [
+          1.0,
+          14.9,
+          28.8,
+          42.7,
+          56.6,
+          70.5,
+          84.4,
+          98.3,
+          112.2,
+          126.1
+        ]
+      },
+      "linhas": [
+        {
+          "classe": "[1.0 ; 14.9)",
+          "li": 1.0,
+          "ls": 14.9,
+          "xi": 7.95,
+          "fi": 141,
+          "fri": 0.681159,
+          "fri_%": 68.115942,
+          "Fi": 141,
+          "Fri": 0.681159,
+          "Fri_%": 68.115942
+        },
+        {
+          "classe": "[14.9 ; 28.8)",
+          "li": 14.9,
+          "ls": 28.8,
+          "xi": 21.85,
+          "fi": 37,
+          "fri": 0.178744,
+          "fri_%": 17.874396,
+          "Fi": 178,
+          "Fri": 0.859903,
+          "Fri_%": 85.990338
+        },
+        {
+          "classe": "[28.8 ; 42.7)",
+          "li": 28.8,
+          "ls": 42.7,
+          "xi": 35.75,
+          "fi": 19,
+          "fri": 0.091787,
+          "fri_%": 9.178744,
+          "Fi": 197,
+          "Fri": 0.951691,
+          "Fri_%": 95.169082
+        },
+        {
+          "classe": "[42.7 ; 56.6)",
+          "li": 42.7,
+          "ls": 56.6,
+          "xi": 49.65,
+          "fi": 5,
+          "fri": 0.024155,
+          "fri_%": 2.415459,
+          "Fi": 202,
+          "Fri": 0.975845,
+          "Fri_%": 97.584541
+        },
+        {
+          "classe": "[56.6 ; 70.5)",
+          "li": 56.6,
+          "ls": 70.5,
+          "xi": 63.55,
+          "fi": 3,
+          "fri": 0.014493,
+          "fri_%": 1.449275,
+          "Fi": 205,
+          "Fri": 0.990338,
+          "Fri_%": 99.033816
+        },
+        {
+          "classe": "[70.5 ; 84.4)",
+          "li": 70.5,
+          "ls": 84.4,
+          "xi": 77.45,
+          "fi": 1,
+          "fri": 0.004831,
+          "fri_%": 0.483092,
+          "Fi": 206,
+          "Fri": 0.995169,
+          "Fri_%": 99.516908
+        },
+        {
+          "classe": "[84.4 ; 98.3)",
+          "li": 84.4,
+          "ls": 98.3,
+          "xi": 91.35,
+          "fi": 0,
+          "fri": 0.0,
+          "fri_%": 0.0,
+          "Fi": 206,
+          "Fri": 0.995169,
+          "Fri_%": 99.516908
+        },
+        {
+          "classe": "[98.3 ; 112.2)",
+          "li": 98.3,
+          "ls": 112.2,
+          "xi": 105.25,
+          "fi": 0,
+          "fri": 0.0,
+          "fri_%": 0.0,
+          "Fi": 206,
+          "Fri": 0.995169,
+          "Fri_%": 99.516908
+        },
+        {
+          "classe": "[112.2 ; 126.1)",
+          "li": 112.2,
+          "ls": 126.1,
+          "xi": 119.15,
+          "fi": 1,
+          "fri": 0.004831,
+          "fri_%": 0.483092,
+          "Fi": 207,
+          "Fri": 1.0,
+          "Fri_%": 100.0
+        }
+      ]
+    }
+  },
+  "graficos": {
+    "arquivos": [
+      "fig1_histograma_chuva_diaria.png",
+      "fig2_precipitacao_mensal.png",
+      "fig3_boxplot_pico_por_mes.png"
+    ],
+    "histograma_linhas": {
+      "media": 13.66,
+      "mediana": 8.0,
+      "p95": 41.56
+    },
+    "precipitacao_mensal": [
+      {
+        "ano": 2025,
+        "mes": 1,
+        "rotulo": "jan/25",
+        "chuva_total_mm": 329.2,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2025,
+        "mes": 2,
+        "rotulo": "fev/25",
+        "chuva_total_mm": 268.2,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2025,
+        "mes": 3,
+        "rotulo": "mar/25",
+        "chuva_total_mm": 111.2,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2025,
+        "mes": 4,
+        "rotulo": "abr/25",
+        "chuva_total_mm": 180.4,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2025,
+        "mes": 5,
+        "rotulo": "mai/25",
+        "chuva_total_mm": 38.0,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2025,
+        "mes": 6,
+        "rotulo": "jun/25",
+        "chuva_total_mm": 72.4,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2025,
+        "mes": 7,
+        "rotulo": "jul/25",
+        "chuva_total_mm": 15.6,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2025,
+        "mes": 8,
+        "rotulo": "ago/25",
+        "chuva_total_mm": 16.6,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2025,
+        "mes": 9,
+        "rotulo": "set/25",
+        "chuva_total_mm": 42.0,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2025,
+        "mes": 10,
+        "rotulo": "out/25",
+        "chuva_total_mm": 116.4,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2025,
+        "mes": 11,
+        "rotulo": "nov/25",
+        "chuva_total_mm": 52.2,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2025,
+        "mes": 12,
+        "rotulo": "dez/25",
+        "chuva_total_mm": 211.0,
+        "dias_descartados": 1,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2026,
+        "mes": 1,
+        "rotulo": "jan/26",
+        "chuva_total_mm": 256.8,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2026,
+        "mes": 2,
+        "rotulo": "fev/26",
+        "chuva_total_mm": 160.0,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2026,
+        "mes": 3,
+        "rotulo": "mar/26",
+        "chuva_total_mm": 138.4,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2026,
+        "mes": 4,
+        "rotulo": "abr/26",
+        "chuva_total_mm": 45.6,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2026,
+        "mes": 5,
+        "rotulo": "mai/26",
+        "chuva_total_mm": 68.8,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2026,
+        "mes": 6,
+        "rotulo": "jun/26",
+        "chuva_total_mm": 124.8,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2026,
+        "mes": 7,
+        "rotulo": "jul/26",
+        "chuva_total_mm": 13.0,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2026,
+        "mes": 8,
+        "rotulo": "ago/26",
+        "chuva_total_mm": 37.0,
+        "dias_descartados": 0,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2026,
+        "mes": 9,
+        "rotulo": "set/26",
+        "chuva_total_mm": 305.8,
+        "dias_descartados": 2,
+        "ultimo_mes_da_serie": false
+      },
+      {
+        "ano": 2026,
+        "mes": 10,
+        "rotulo": "out/26",
+        "chuva_total_mm": 256.8,
+        "dias_descartados": 2,
+        "ultimo_mes_da_serie": true
+      }
+    ]
+  },
+  "estatistica_descritiva": {
+    "populacao": "dias chuvosos (chuva_dia_mm >= 1,0 mm), dias válidos",
+    "variaveis": {
+      "chuva_dia_mm": {
+        "nome": "Volume diário de chuva",
+        "unidade": "mm"
+      },
+      "pico_mm_h": {
+        "nome": "Intensidade máxima horária",
+        "unidade": "mm/h"
+      }
+    },
+    "metodo_quantil": "pandas Series.quantile, interpolação linear (Hyndman & Fan tipo 7)",
+    "variancia": "amostral (ddof = 1, divisor n − 1)",
+    "criterio_cv": {
+      "fonte": "PIMENTEL-GOMES, F. Curso de estatística experimental. Piracicaba: Nobel, 1985.",
+      "baixa": "CV < 10%",
+      "media": "10% <= CV < 20%",
+      "alta": "20% <= CV < 30%",
+      "muito_alta": "CV >= 30%"
+    },
+    "medidas": {
+      "chuva_dia_mm": {
+        "n": 207,
+        "media": 13.66183574879227,
+        "mediana": 8.0,
+        "moda_czuber": 8.9996,
+        "moda_bruta": [
+          1.6
+        ],
+        "moda_bruta_frequencia": 9,
+        "detalhe_czuber": {
+          "moda_czuber": 8.9996,
+          "classe_modal": "[1.0 ; 14.9)",
+          "li": 1.0,
+          "h": 13.9,
+          "f_modal": 141,
+          "f_anterior": 0,
+          "f_posterior": 37,
+          "d1": 141,
+          "d2": 104,
+          "sturges": {
+            "n": 207,
+            "k_bruto": 8.6937,
+            "k": 9,
+            "minimo": 1.0,
+            "maximo": 125.6,
+            "amplitude_total": 124.6,
+            "h_bruto": 13.8444,
+            "h": 13.9,
+            "limites": [
+              1.0,
+              14.9,
+              28.8,
+              42.7,
+              56.6,
+              70.5,
+              84.4,
+              98.3,
+              112.2,
+              126.1
+            ]
+          },
+          "tabela_classes": [
+            {
+              "classe": "[1.0 ; 14.9)",
+              "li": 1.0,
+              "ls": 14.9,
+              "xi": 7.95,
+              "fi": 141,
+              "fri": 0.681159,
+              "fri_%": 68.115942,
+              "Fi": 141,
+              "Fri": 0.681159,
+              "Fri_%": 68.115942
+            },
+            {
+              "classe": "[14.9 ; 28.8)",
+              "li": 14.9,
+              "ls": 28.8,
+              "xi": 21.85,
+              "fi": 37,
+              "fri": 0.178744,
+              "fri_%": 17.874396,
+              "Fi": 178,
+              "Fri": 0.859903,
+              "Fri_%": 85.990338
+            },
+            {
+              "classe": "[28.8 ; 42.7)",
+              "li": 28.8,
+              "ls": 42.7,
+              "xi": 35.75,
+              "fi": 19,
+              "fri": 0.091787,
+              "fri_%": 9.178744,
+              "Fi": 197,
+              "Fri": 0.951691,
+              "Fri_%": 95.169082
+            },
+            {
+              "classe": "[42.7 ; 56.6)",
+              "li": 42.7,
+              "ls": 56.6,
+              "xi": 49.65,
+              "fi": 5,
+              "fri": 0.024155,
+              "fri_%": 2.415459,
+              "Fi": 202,
+              "Fri": 0.975845,
+              "Fri_%": 97.584541
+            },
+            {
+              "classe": "[56.6 ; 70.5)",
+              "li": 56.6,
+              "ls": 70.5,
+              "xi": 63.55,
+              "fi": 3,
+              "fri": 0.014493,
+              "fri_%": 1.449275,
+              "Fi": 205,
+              "Fri": 0.990338,
+              "Fri_%": 99.033816
+            },
+            {
+              "classe": "[70.5 ; 84.4)",
+              "li": 70.5,
+              "ls": 84.4,
+              "xi": 77.45,
+              "fi": 1,
+              "fri": 0.004831,
+              "fri_%": 0.483092,
+              "Fi": 206,
+              "Fri": 0.995169,
+              "Fri_%": 99.516908
+            },
+            {
+              "classe": "[84.4 ; 98.3)",
+              "li": 84.4,
+              "ls": 98.3,
+              "xi": 91.35,
+              "fi": 0,
+              "fri": 0.0,
+              "fri_%": 0.0,
+              "Fi": 206,
+              "Fri": 0.995169,
+              "Fri_%": 99.516908
+            },
+            {
+              "classe": "[98.3 ; 112.2)",
+              "li": 98.3,
+              "ls": 112.2,
+              "xi": 105.25,
+              "fi": 0,
+              "fri": 0.0,
+              "fri_%": 0.0,
+              "Fi": 206,
+              "Fri": 0.995169,
+              "Fri_%": 99.516908
+            },
+            {
+              "classe": "[112.2 ; 126.1)",
+              "li": 112.2,
+              "ls": 126.1,
+              "xi": 119.15,
+              "fi": 1,
+              "fri": 0.004831,
+              "fri_%": 0.483092,
+              "Fi": 207,
+              "Fri": 1.0,
+              "Fri_%": 100.0
+            }
+          ]
+        },
+        "maximo": 125.6,
+        "minimo": 1.0,
+        "amplitude": 124.6,
+        "variancia": 248.72353641949258,
+        "desvio_padrao": 15.770971321370556,
+        "cv_pct": 115.43815641880147,
+        "cv_classificacao": "muito alta dispersão",
+        "Q1": 3.0,
+        "Q2": 8.0,
+        "Q3": 18.0,
+        "AIQ": 15.0,
+        "limite_superior_atipicos": 40.5,
+        "n_atipicos_acima": 12,
+        "assimetria": 2.8449658277871945,
+        "P90": 32.040000000000006,
+        "P95": 41.55999999999999,
+        "P99": 65.66799999999999,
+        "n_acima_Q3": 51,
+        "n_acima_P90": 21,
+        "n_acima_P95": 11,
+        "n_acima_P99": 3
+      },
+      "pico_mm_h": {
+        "n": 207,
+        "media": 7.054106280193237,
+        "mediana": 4.0,
+        "moda_czuber": 5.27,
+        "moda_bruta": [
+          1.8
+        ],
+        "moda_bruta_frequencia": 11,
+        "detalhe_czuber": {
+          "moda_czuber": 5.27,
+          "classe_modal": "[0.2 ; 9.3)",
+          "li": 0.2,
+          "h": 9.1,
+          "f_modal": 156,
+          "f_anterior": 0,
+          "f_posterior": 32,
+          "d1": 156,
+          "d2": 124,
+          "sturges": {
+            "n": 207,
+            "k_bruto": 8.6937,
+            "k": 9,
+            "minimo": 0.2,
+            "maximo": 82.0,
+            "amplitude_total": 81.8,
+            "h_bruto": 9.0889,
+            "h": 9.1,
+            "limites": [
+              0.2,
+              9.3,
+              18.4,
+              27.5,
+              36.6,
+              45.7,
+              54.8,
+              63.9,
+              73.0,
+              82.1
+            ]
+          },
+          "tabela_classes": [
+            {
+              "classe": "[0.2 ; 9.3)",
+              "li": 0.2,
+              "ls": 9.3,
+              "xi": 4.75,
+              "fi": 156,
+              "fri": 0.753623,
+              "fri_%": 75.362319,
+              "Fi": 156,
+              "Fri": 0.753623,
+              "Fri_%": 75.362319
+            },
+            {
+              "classe": "[9.3 ; 18.4)",
+              "li": 9.3,
+              "ls": 18.4,
+              "xi": 13.85,
+              "fi": 32,
+              "fri": 0.154589,
+              "fri_%": 15.458937,
+              "Fi": 188,
+              "Fri": 0.908213,
+              "Fri_%": 90.821256
+            },
+            {
+              "classe": "[18.4 ; 27.5)",
+              "li": 18.4,
+              "ls": 27.5,
+              "xi": 22.95,
+              "fi": 14,
+              "fri": 0.067633,
+              "fri_%": 6.763285,
+              "Fi": 202,
+              "Fri": 0.975845,
+              "Fri_%": 97.584541
+            },
+            {
+              "classe": "[27.5 ; 36.6)",
+              "li": 27.5,
+              "ls": 36.6,
+              "xi": 32.05,
+              "fi": 3,
+              "fri": 0.014493,
+              "fri_%": 1.449275,
+              "Fi": 205,
+              "Fri": 0.990338,
+              "Fri_%": 99.033816
+            },
+            {
+              "classe": "[36.6 ; 45.7)",
+              "li": 36.6,
+              "ls": 45.7,
+              "xi": 41.15,
+              "fi": 1,
+              "fri": 0.004831,
+              "fri_%": 0.483092,
+              "Fi": 206,
+              "Fri": 0.995169,
+              "Fri_%": 99.516908
+            },
+            {
+              "classe": "[45.7 ; 54.8)",
+              "li": 45.7,
+              "ls": 54.8,
+              "xi": 50.25,
+              "fi": 0,
+              "fri": 0.0,
+              "fri_%": 0.0,
+              "Fi": 206,
+              "Fri": 0.995169,
+              "Fri_%": 99.516908
+            },
+            {
+              "classe": "[54.8 ; 63.9)",
+              "li": 54.8,
+              "ls": 63.9,
+              "xi": 59.35,
+              "fi": 0,
+              "fri": 0.0,
+              "fri_%": 0.0,
+              "Fi": 206,
+              "Fri": 0.995169,
+              "Fri_%": 99.516908
+            },
+            {
+              "classe": "[63.9 ; 73.0)",
+              "li": 63.9,
+              "ls": 73.0,
+              "xi": 68.45,
+              "fi": 0,
+              "fri": 0.0,
+              "fri_%": 0.0,
+              "Fi": 206,
+              "Fri": 0.995169,
+              "Fri_%": 99.516908
+            },
+            {
+              "classe": "[73.0 ; 82.1)",
+              "li": 73.0,
+              "ls": 82.1,
+              "xi": 77.55,
+              "fi": 1,
+              "fri": 0.004831,
+              "fri_%": 0.483092,
+              "Fi": 207,
+              "Fri": 1.0,
+              "Fri_%": 100.0
+            }
+          ]
+        },
+        "maximo": 82.0,
+        "minimo": 0.2,
+        "amplitude": 81.8,
+        "variancia": 78.49531072651376,
+        "desvio_padrao": 8.8597579383702,
+        "cv_pct": 125.5971711575559,
+        "cv_classificacao": "muito alta dispersão",
+        "Q1": 1.8,
+        "Q2": 4.0,
+        "Q3": 9.1,
+        "AIQ": 7.3,
+        "limite_superior_atipicos": 20.049999999999997,
+        "n_atipicos_acima": 11,
+        "assimetria": 3.903484254082428,
+        "P90": 17.840000000000003,
+        "P95": 20.979999999999983,
+        "P99": 35.528,
+        "n_acima_Q3": 52,
+        "n_acima_P90": 21,
+        "n_acima_P95": 11,
+        "n_acima_P99": 3
+      }
+    }
+  },
+  "insights": {
+    "por_mes": [
+      {
+        "mes": 1,
+        "mes_nome": "jan",
+        "anos_com_dados": [
+          2025,
+          2026
+        ],
+        "dias_validos": 62,
+        "dias_chuvosos": 33,
+        "pct_dias_chuvosos": 53.23,
+        "chuva_total_mm": 586.0,
+        "chuva_media_por_ano_mm": 293.0,
+        "dias_pico_acima_P90": 7,
+        "dias_pico_acima_P95": 4,
+        "pico_max_mm_h": 82.0
+      },
+      {
+        "mes": 2,
+        "mes_nome": "fev",
+        "anos_com_dados": [
+          2025,
+          2026
+        ],
+        "dias_validos": 56,
+        "dias_chuvosos": 28,
+        "pct_dias_chuvosos": 50.0,
+        "chuva_total_mm": 428.2,
+        "chuva_media_por_ano_mm": 214.1,
+        "dias_pico_acima_P90": 4,
+        "dias_pico_acima_P95": 3,
+        "pico_max_mm_h": 35.6
+      },
+      {
+        "mes": 3,
+        "mes_nome": "mar",
+        "anos_com_dados": [
+          2025,
+          2026
+        ],
+        "dias_validos": 62,
+        "dias_chuvosos": 19,
+        "pct_dias_chuvosos": 30.65,
+        "chuva_total_mm": 249.6,
+        "chuva_media_por_ano_mm": 124.8,
+        "dias_pico_acima_P90": 2,
+        "dias_pico_acima_P95": 0,
+        "pico_max_mm_h": 20.0
+      },
+      {
+        "mes": 4,
+        "mes_nome": "abr",
+        "anos_com_dados": [
+          2025,
+          2026
+        ],
+        "dias_validos": 60,
+        "dias_chuvosos": 18,
+        "pct_dias_chuvosos": 30.0,
+        "chuva_total_mm": 226.0,
+        "chuva_media_por_ano_mm": 113.0,
+        "dias_pico_acima_P90": 2,
+        "dias_pico_acima_P95": 1,
+        "pico_max_mm_h": 32.0
+      },
+      {
+        "mes": 5,
+        "mes_nome": "mai",
+        "anos_com_dados": [
+          2025,
+          2026
+        ],
+        "dias_validos": 62,
+        "dias_chuvosos": 12,
+        "pct_dias_chuvosos": 19.35,
+        "chuva_total_mm": 106.8,
+        "chuva_media_por_ano_mm": 53.4,
+        "dias_pico_acima_P90": 0,
+        "dias_pico_acima_P95": 0,
+        "pico_max_mm_h": 10.4
+      },
+      {
+        "mes": 6,
+        "mes_nome": "jun",
+        "anos_com_dados": [
+          2025,
+          2026
+        ],
+        "dias_validos": 60,
+        "dias_chuvosos": 18,
+        "pct_dias_chuvosos": 30.0,
+        "chuva_total_mm": 197.2,
+        "chuva_media_por_ano_mm": 98.6,
+        "dias_pico_acima_P90": 0,
+        "dias_pico_acima_P95": 0,
+        "pico_max_mm_h": 17.6
+      },
+      {
+        "mes": 7,
+        "mes_nome": "jul",
+        "anos_com_dados": [
+          2025,
+          2026
+        ],
+        "dias_validos": 62,
+        "dias_chuvosos": 5,
+        "pct_dias_chuvosos": 8.06,
+        "chuva_total_mm": 28.6,
+        "chuva_media_por_ano_mm": 14.3,
+        "dias_pico_acima_P90": 0,
+        "dias_pico_acima_P95": 0,
+        "pico_max_mm_h": 6.6
+      },
+      {
+        "mes": 8,
+        "mes_nome": "ago",
+        "anos_com_dados": [
+          2025,
+          2026
+        ],
+        "dias_validos": 62,
+        "dias_chuvosos": 6,
+        "pct_dias_chuvosos": 9.68,
+        "chuva_total_mm": 53.6,
+        "chuva_media_por_ano_mm": 26.8,
+        "dias_pico_acima_P90": 1,
+        "dias_pico_acima_P95": 0,
+        "pico_max_mm_h": 18.8
+      },
+      {
+        "mes": 9,
+        "mes_nome": "set",
+        "anos_com_dados": [
+          2025,
+          2026
+        ],
+        "dias_validos": 58,
+        "dias_chuvosos": 17,
+        "pct_dias_chuvosos": 29.31,
+        "chuva_total_mm": 347.8,
+        "chuva_media_por_ano_mm": 173.9,
+        "dias_pico_acima_P90": 1,
+        "dias_pico_acima_P95": 1,
+        "pico_max_mm_h": 26.4
+      },
+      {
+        "mes": 10,
+        "mes_nome": "out",
+        "anos_com_dados": [
+          2025,
+          2026
+        ],
+        "dias_validos": 60,
+        "dias_chuvosos": 28,
+        "pct_dias_chuvosos": 46.67,
+        "chuva_total_mm": 373.2,
+        "chuva_media_por_ano_mm": 186.6,
+        "dias_pico_acima_P90": 4,
+        "dias_pico_acima_P95": 2,
+        "pico_max_mm_h": 24.8
+      },
+      {
+        "mes": 11,
+        "mes_nome": "nov",
+        "anos_com_dados": [
+          2025
+        ],
+        "dias_validos": 30,
+        "dias_chuvosos": 9,
+        "pct_dias_chuvosos": 30.0,
+        "chuva_total_mm": 52.2,
+        "chuva_media_por_ano_mm": 52.2,
+        "dias_pico_acima_P90": 0,
+        "dias_pico_acima_P95": 0,
+        "pico_max_mm_h": 4.8
+      },
+      {
+        "mes": 12,
+        "mes_nome": "dez",
+        "anos_com_dados": [
+          2025
+        ],
+        "dias_validos": 30,
+        "dias_chuvosos": 14,
+        "pct_dias_chuvosos": 46.67,
+        "chuva_total_mm": 211.0,
+        "chuva_media_por_ano_mm": 211.0,
+        "dias_pico_acima_P90": 0,
+        "dias_pico_acima_P95": 0,
+        "pico_max_mm_h": 13.2
+      }
+    ],
+    "verao_dez_mar": {
+      "dias_chuvosos": 94,
+      "pct_dos_dias_chuvosos": 45.41,
+      "dias_pico_acima_P90": 13,
+      "total_dias_pico_acima_P90": 21,
+      "pct_dos_dias_pico_acima_P90": 61.9,
+      "chuva_mm": 1474.8,
+      "pct_da_chuva_total": 51.56
+    },
+    "hora_do_pico_dias_acima_P90": {
+      "n_dias": 21,
+      "contagem_por_hora": {
+        "0": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "8": 1,
+        "9": 1,
+        "13": 1,
+        "15": 2,
+        "16": 3,
+        "17": 4,
+        "18": 1,
+        "21": 1,
+        "22": 1,
+        "23": 2
+      },
+      "n_entre_14h_e_21h": 11,
+      "pct_entre_14h_e_21h": 52.38
+    },
+    "intensidade_vs_volume": {
+      "dias_pico_acima_P95": 11,
+      "destes_com_volume_ate_P95_diario": 6,
+      "datas": [
+        {
+          "data": "2025-01-24",
+          "pico_mm_h": 82.0,
+          "chuva_dia_mm": 125.6
+        },
+        {
+          "data": "2026-01-25",
+          "pico_mm_h": 40.2,
+          "chuva_dia_mm": 49.4
+        },
+        {
+          "data": "2025-02-10",
+          "pico_mm_h": 35.6,
+          "chuva_dia_mm": 37.0
+        },
+        {
+          "data": "2025-02-14",
+          "pico_mm_h": 34.4,
+          "chuva_dia_mm": 35.8
+        },
+        {
+          "data": "2025-04-14",
+          "pico_mm_h": 32.0,
+          "chuva_dia_mm": 55.6
+        },
+        {
+          "data": "2026-09-12",
+          "pico_mm_h": 26.4,
+          "chuva_dia_mm": 74.0
+        },
+        {
+          "data": "2026-02-16",
+          "pico_mm_h": 24.8,
+          "chuva_dia_mm": 25.6
+        },
+        {
+          "data": "2026-10-24",
+          "pico_mm_h": 24.8,
+          "chuva_dia_mm": 24.8
+        },
+        {
+          "data": "2026-01-07",
+          "pico_mm_h": 22.2,
+          "chuva_dia_mm": 41.8
+        },
+        {
+          "data": "2026-01-27",
+          "pico_mm_h": 21.4,
+          "chuva_dia_mm": 21.6
+        },
+        {
+          "data": "2026-10-09",
+          "pico_mm_h": 21.4,
+          "chuva_dia_mm": 32.4
+        }
+      ]
+    },
+    "fracao_do_dia_na_hora_de_pico_pct": {
+      "mediana": 50.0,
+      "media": 56.99
+    }
+  },
+  "derivados_relatorio": {
+    "anos_equivalentes_de_dados": 1.8179,
+    "pct_horas_faltantes": 0.83,
+    "pct_dias_descartados": 0.75,
+    "pct_dias_secos": 68.83,
+    "maior_evento_pct_na_hora_de_pico": 65.29,
+    "dias_por_ano_acima": {
+      "chuva_dia_mm": {
+        "Q3": 28.05,
+        "P90": 11.55,
+        "P95": 6.05,
+        "P99": 1.65
+      },
+      "pico_mm_h": {
+        "Q3": 28.6,
+        "P90": 11.55,
+        "P95": 6.05,
+        "P99": 1.65
+      }
+    },
+    "pct_dias_chuvosos_acima": {
+      "chuva_dia_mm": {
+        "Q3": 24.64,
+        "P90": 10.14,
+        "P95": 5.31,
+        "P99": 1.45
+      },
+      "pico_mm_h": {
+        "Q3": 25.12,
+        "P90": 10.14,
+        "P95": 5.31,
+        "P99": 1.45
+      }
+    },
+    "razao_media_mediana": {
+      "chuva_dia_mm": 1.71,
+      "pico_mm_h": 1.76
+    }
+  }
+}
