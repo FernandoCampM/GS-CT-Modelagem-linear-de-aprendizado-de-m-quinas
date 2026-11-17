@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 =============================================================================
-Disciplina : Estatística — Ciência da Computação (3º semestre) — FIAP
+Disciplina : Modelagem Linear e Aprendizado de Máquina — Ciência da Computação (1º semestre) — FIAP
 Trabalho   : Global Solution CitizenTech — Enchentes e alagamentos em São Paulo
 Integrantes:
     Fernando Campos Garnica Mota  — RM 567451
@@ -162,7 +162,7 @@ def desenhar_rodape(canvas, doc):
     canvas.setFont("DejaVu", 7.2)
     canvas.setFillColor(CINZA)
     canvas.drawString(2 * cm, 1.15 * cm, TEXTO_RODAPE)
-    canvas.drawString(2 * cm, 0.8 * cm, "Global Solution CitizenTech · Estatística · FIAP — Ciência da Computação")
+    canvas.drawString(2 * cm, 0.8 * cm, "Global Solution CitizenTech · Modelagem Linear e Aprendizado de Máquina · FIAP — Ciência da Computação")
     canvas.drawRightString(A4[0] - 2 * cm, 1.15 * cm, f"Página {doc.page}")
     canvas.restoreState()
 
@@ -175,8 +175,8 @@ def capa(hoje: str) -> list:
     return [
         Spacer(1, 1.2 * cm),
         Paragraph("FIAP — Faculdade de Informática e Administração Paulista", centro(13, True, AZUL_ESCURO)),
-        Paragraph("Bacharelado em Ciência da Computação — 3º semestre", centro(11)),
-        Paragraph("Disciplina: Estatística", centro(11)),
+        Paragraph("Bacharelado em Ciência da Computação — 1º semestre", centro(11)),
+        Paragraph("Disciplina: Modelagem Linear e Aprendizado de Máquina", centro(11)),
         Spacer(1, 2.2 * cm),
         Paragraph("Global Solution: CitizenTech", centro(15, True, AZUL_ESCURO, 18)),
         Paragraph("Chuvas intensas e risco de alagamentos em São Paulo", centro(19, True, colors.black, 8)),
@@ -677,7 +677,7 @@ def main():
         str(ARQ_PDF), pagesize=A4, leftMargin=2 * cm, rightMargin=2 * cm, topMargin=2 * cm,
         bottomMargin=2.2 * cm, title="Chuvas intensas e risco de alagamentos em São Paulo",
         author="; ".join(f"{nome} (RM {rm})" for nome, rm in INTEGRANTES),
-        subject="Global Solution CitizenTech — Estatística — FIAP",
+        subject="Global Solution CitizenTech — Modelagem Linear e Aprendizado de Máquina — FIAP",
     )
     historia = capa(hoje_txt) + montar_conteudo(R, D)
     doc.build(historia, onFirstPage=desenhar_rodape, onLaterPages=desenhar_rodape)

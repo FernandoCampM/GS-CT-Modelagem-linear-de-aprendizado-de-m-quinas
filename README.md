@@ -1,6 +1,6 @@
 # Chuvas intensas e risco de alagamentos em São Paulo
 
-**Global Solution CitizenTech · FIAP · Ciência da Computação · Estatística**
+**Global Solution CitizenTech · FIAP · Ciência da Computação (1º semestre) · Modelagem Linear e Aprendizado de Máquina**
 
 Análise estatística da precipitação horária medida pela estação automática **INMET A701
 (São Paulo - Mirante de Santana)** de **01/01/2025 a 31/10/2026**. O objetivo é dar base

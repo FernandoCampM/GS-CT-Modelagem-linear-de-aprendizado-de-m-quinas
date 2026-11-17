@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 =============================================================================
-Disciplina : Estatística — Ciência da Computação (3º semestre) — FIAP
+Disciplina : Modelagem Linear e Aprendizado de Máquina — Ciência da Computação (1º semestre) — FIAP
 Trabalho   : Global Solution CitizenTech — Enchentes e alagamentos em São Paulo
 Integrantes:
     Fernando Campos Garnica Mota  — RM 567451

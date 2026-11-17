@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 =============================================================================
-Disciplina : Estatística — Ciência da Computação (3º semestre) — FIAP
+Disciplina : Modelagem Linear e Aprendizado de Máquina — Ciência da Computação (1º semestre) — FIAP
 Trabalho   : Global Solution CitizenTech — Enchentes e alagamentos em São Paulo
 Integrantes:
     Fernando Campos Garnica Mota  — RM 567451
@@ -35,7 +35,7 @@ ARQ_RESULTADOS = PASTA_SAIDAS / "resultados.json"
 ARQ_HORARIA = PASTA_PROCESSADOS / "chuva_A701_horaria.csv"
 ARQ_DIARIA = PASTA_PROCESSADOS / "chuva_A701_diaria.csv"
 
-DISCIPLINA = "Estatística — Ciência da Computação (3º semestre) — FIAP"
+DISCIPLINA = "Modelagem Linear e Aprendizado de Máquina — Ciência da Computação (1º semestre) — FIAP"
 TRABALHO = "Global Solution CitizenTech — Enchentes e alagamentos em São Paulo"
 INTEGRANTES = [
     ("Fernando Campos Garnica Mota", "567451"),

@@ -1,4 +1,4 @@
-# CLAUDE.md — GS CitizenTech · Estatística (Ciência da Computação, 3º semestre)
+# CLAUDE.md — GS CitizenTech · Modelagem Linear e Aprendizado de Máquina (Ciência da Computação, 1º semestre)
 
 Você vai ajudar a fazer a parte de **Estatística** da Global Solution CitizenTech da FIAP.
 Leia este arquivo inteiro antes de começar e siga as fases em ordem. Ao fim de cada fase,
@@ -88,6 +88,20 @@ Dos 11 dias com pico > P95, 6 não passariam do P95 do volume diário.
   copie para `entrega/` e confira que os números do PDF batem com `resultados.json`.
 - Mantenha cabeçalho com nome e RM em todo `.py` novo ou alterado.
 - Não invente números, limiares oficiais nem fontes (regra da seção 5, Fase 6).
+
+### 0.7 Conferência com o enunciado original (16/11/2026)
+O usuário enviou o PDF original do professor ("GS CC 1º Semestre"). A seção 2 bate com ele. Correções e
+confirmações feitas a partir dele:
+- **Disciplina:** é **Modelagem Linear e Aprendizado de Máquina** (MLAM), não "Estatística". Confirmado
+  pelo usuário. Trocado na capa, no rodapé e nos metadados do PDF, no xlsx e no cabeçalho dos `.py`.
+- **Semestre:** é o **1º semestre**, não o 3º. Confirmado pelo usuário. Trocado nos mesmos lugares.
+- **Envio:** só **um representante** do grupo posta no Portal. Não se aceita envio nem substituição
+  depois do prazo.
+- **Páginas:** o enunciado não fixa número de páginas nem modelo de relatório.
+- **Métodos:** o enunciado pede que se sigam os formatos "trabalhados em aula". Pelos notebooks de aula
+  (CP2 visualização, CP3 estatística descritiva): variância e desvio padrão **amostrais** (igual ao
+  relatório), moda simples (o relatório mostra Czuber e a moda bruta), gráficos em matplotlib com
+  rótulos de valor via `plt.text`. Os notebooks não tratam de quartis, Sturges nem tabela de frequência.
 
 ---
 
