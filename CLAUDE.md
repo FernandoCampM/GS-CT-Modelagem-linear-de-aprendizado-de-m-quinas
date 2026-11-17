@@ -1,6 +1,9 @@
 # CLAUDE.md — GS CitizenTech · Modelagem Linear e Aprendizado de Máquina (Ciência da Computação, 1º semestre)
 
-Você vai ajudar a fazer a parte de **Estatística** da Global Solution CitizenTech da FIAP.
+Você vai ajudar a fazer a entrega da disciplina **Modelagem Linear e Aprendizado de Máquina** (MLAM)
+na Global Solution CitizenTech da FIAP. O conteúdo desta entrega é de **estatística** (grande parte
+da disciplina): tabelas de frequência, gráficos e estatística descritiva. Em capas, rodapés e
+cabeçalhos, use sempre o nome oficial da disciplina.
 Leia este arquivo inteiro antes de começar e siga as fases em ordem. Ao fim de cada fase,
 mostre o que foi gerado e espere o "ok" antes de seguir.
 
@@ -92,8 +95,8 @@ Dos 11 dias com pico > P95, 6 não passariam do P95 do volume diário.
 ### 0.7 Conferência com o enunciado original (16/11/2026)
 O usuário enviou o PDF original do professor ("GS CC 1º Semestre"). A seção 2 bate com ele. Correções e
 confirmações feitas a partir dele:
-- **Disciplina:** é **Modelagem Linear e Aprendizado de Máquina** (MLAM), não "Estatística". Confirmado
-  pelo usuário. Trocado na capa, no rodapé e nos metadados do PDF, no xlsx e no cabeçalho dos `.py`.
+- **Disciplina:** o nome oficial é **Modelagem Linear e Aprendizado de Máquina** (MLAM). Estatística é
+  grande parte do conteúdo dela, mas não é o nome da disciplina. Confirmado pelo usuário. Trocado na capa, no rodapé e nos metadados do PDF, no xlsx e no cabeçalho dos `.py`.
 - **Semestre:** é o **1º semestre**, não o 3º. Confirmado pelo usuário. Trocado nos mesmos lugares.
 - **Envio:** só **um representante** do grupo posta no Portal. Não se aceita envio nem substituição
   depois do prazo.
