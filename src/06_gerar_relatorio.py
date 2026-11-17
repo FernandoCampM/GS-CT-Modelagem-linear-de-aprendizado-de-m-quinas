@@ -388,8 +388,12 @@ def montar_conteudo(R: dict, D: dict) -> list:
               "amostra do comportamento da chuva na cidade, e não a população completa.",
               "<b>Coeficiente de variação</b> CV = s / x̄ × 100%, classificado pelo critério de Pimentel-Gomes "
               "(1985): baixo abaixo de 10%, médio de 10% a 20%, alto de 20% a 30% e muito alto a partir de 30%.",
-              "<b>Quartis e percentis:</b> método padrão do pandas, interpolação linear entre as observações "
-              "ordenadas (tipo 7 de Hyndman e Fan, o mesmo do QUARTIL.INC do Excel).",
+              "<b>Quartis e percentis:</b> interpolação linear entre as observações ordenadas, na posição "
+              "(n − 1)·p (tipo 7 de Hyndman e Fan, o mesmo método padrão do pandas e do QUARTIL.INC do Excel).",
+              "<b>Implementação:</b> média, mediana, moda, máximo, mínimo, amplitude, variância, desvio padrão, "
+              "CV e quartis foram calculados por funções próprias em Python, que aplicam as fórmulas diretamente "
+              "sobre a lista de valores. Cada resultado foi conferido contra a biblioteca pandas, e o script "
+              "interrompe a execução se houver qualquer divergência.",
           ]),
           p("4.3 Ferramentas", "h2"),
           p("Python 3.12 com pandas e NumPy (tratamento e cálculos), matplotlib (gráficos), openpyxl (planilha "

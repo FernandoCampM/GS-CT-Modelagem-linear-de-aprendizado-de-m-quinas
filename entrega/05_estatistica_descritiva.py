@@ -14,10 +14,15 @@ Script 05 — Estatística descritiva (Exercício 04)
     Para cada uma: a) média, mediana e moda (Czuber + moda bruta);
     b) máximo, mínimo, amplitude, variância amostral, desvio padrão e CV;
     c) quartis e AIQ; extras: P90, P95, P99 (limiares de alerta).
+    As medidas são calculadas por funções próprias (media, mediana, moda,
+    variancia, desvio_padrao, quantil...), no estilo das aulas, e conferidas
+    contra o pandas: se alguma divergir, o script para com erro.
     Calcula também os números de apoio aos insights do relatório
     (sazonalidade e hora dos picos). Tudo vai para saidas/resultados.json.
 =============================================================================
 """
+import math
+
 import pandas as pd
 
 from comum import (ARQ_DIARIA, ARQ_HORARIA, PASTA_TABELAS, parametros_sturges,
@@ -34,6 +39,105 @@ VARIAVEIS = {
 LIMITES_CV = (10, 20, 30)
 PERCENTIS_ALERTA = [0.90, 0.95, 0.99]
 MESES_PT = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
+
+
+# =============================================================================
+# Funções de estatística descritiva escritas "à mão", no estilo das aulas (CP3):
+# cada uma recebe uma lista de números e aplica a fórmula diretamente.
+# Elas são a fonte dos valores; o pandas é usado só para CONFERIR (ver conferir()).
+# =============================================================================
+
+def media(lista: list) -> float:
+    """Média aritmética: x̄ = Σxi / n."""
+    return sum(lista) / len(lista)
+
+
+def mediana(lista: list) -> float:
+    """Valor central da lista ordenada. Com n par, é a média dos dois centrais."""
+    ordenada = sorted(lista)
+    n = len(ordenada)
+    meio = n // 2
+    if n % 2 == 1:
+        return ordenada[meio]
+    return (ordenada[meio - 1] + ordenada[meio]) / 2
+
+
+def moda(lista: list) -> tuple[list, int]:
+    """
+    Moda bruta: valor(es) que mais se repete(m). Devolve a lista de modas
+    (pode haver mais de uma) e quantas vezes elas aparecem.
+    """
+    contagem = {}
+    for valor in lista:
+        contagem[valor] = contagem.get(valor, 0) + 1
+    freq_max = max(contagem.values())
+    modas = sorted(valor for valor, freq in contagem.items() if freq == freq_max)
+    return modas, freq_max
+
+
+def maximo(lista: list) -> float:
+    maior = lista[0]
+    for valor in lista:
+        if valor > maior:
+            maior = valor
+    return maior
+
+
+def minimo(lista: list) -> float:
+    menor = lista[0]
+    for valor in lista:
+        if valor < menor:
+            menor = valor
+    return menor
+
+
+def amplitude(lista: list) -> float:
+    """Amplitude total: máximo − mínimo."""
+    return maximo(lista) - minimo(lista)
+
+
+def variancia(lista: list) -> float:
+    """
+    Variância AMOSTRAL: s² = Σ(xi − x̄)² / (n − 1).
+    Divide por n − 1 porque os dias de 2025–2026 são uma amostra do comportamento
+    da chuva em SP, e não a população inteira.
+    """
+    x_barra = media(lista)
+    soma_quadrados = sum((x - x_barra) ** 2 for x in lista)
+    return soma_quadrados / (len(lista) - 1)
+
+
+def desvio_padrao(lista: list) -> float:
+    """Desvio padrão amostral: s = √s²."""
+    return variancia(lista) ** 0.5
+
+
+def coeficiente_variacao(lista: list) -> float:
+    """CV = s / x̄ × 100 (%)."""
+    return desvio_padrao(lista) / media(lista) * 100
+
+
+def quantil(lista: list, p: float) -> float:
+    """
+    Separatriz de ordem p (0 a 1), por interpolação linear entre as observações
+    ordenadas: posição = (n − 1)·p, contando a partir de 0. Se a posição cair entre
+    dois valores, toma-se o valor proporcional entre eles. É o método padrão do
+    pandas e do QUARTIL.INC do Excel (tipo 7 de Hyndman & Fan).
+    Ex.: Q1 = quantil(lista, 0.25); Q2 = quantil(lista, 0.50); Q3 = quantil(lista, 0.75).
+    """
+    ordenada = sorted(lista)
+    posicao = (len(ordenada) - 1) * p
+    abaixo = int(posicao)                      # índice do valor logo abaixo
+    fracao = posicao - abaixo                  # quanto avançar até o próximo
+    if abaixo + 1 >= len(ordenada):
+        return ordenada[abaixo]
+    return ordenada[abaixo] + fracao * (ordenada[abaixo + 1] - ordenada[abaixo])
+
+
+def conferir(nome: str, valor_manual: float, valor_pandas: float) -> None:
+    """Garante que a função manual dá o mesmo resultado que o pandas."""
+    if not math.isclose(valor_manual, valor_pandas, rel_tol=1e-9, abs_tol=1e-9):
+        raise ValueError(f"{nome}: manual = {valor_manual} ≠ pandas = {valor_pandas}")
 
 
 def classificar_cv(cv: float) -> str:
@@ -71,41 +175,59 @@ def moda_czuber(serie: pd.Series) -> dict:
 
 
 def descrever(serie: pd.Series) -> dict:
-    n = int(serie.count())
-    media = serie.mean()
-    mediana = serie.median()
+    serie = serie.dropna()
+    lista = [float(x) for x in serie]  # as funções manuais trabalham com listas
+    n = len(lista)
+
+    # a) Tendência central (funções manuais).
+    x_barra = media(lista)
+    md = mediana(lista)
     # Moda bruta: valor que mais se repete. O pluviômetro registra em passos de
     # 0,2 mm, por isso há repetições; serve como referência, não como moda principal.
-    contagem = serie.value_counts()
-    freq_max = int(contagem.max())
-    modas_brutas = sorted(float(v) for v in contagem[contagem == freq_max].index)
+    modas_brutas, freq_max = moda(lista)
     czuber = moda_czuber(serie)
 
-    maximo, minimo = serie.max(), serie.min()
-    # Variância AMOSTRAL (ddof=1, divide por n−1): os dias de 2025–2026 são uma
-    # amostra do comportamento da chuva em SP, não a população inteira.
-    variancia = serie.var(ddof=1)
-    desvio = serie.std(ddof=1)
-    cv = desvio / media * 100
+    # b) Dispersão (funções manuais; variância e desvio AMOSTRAIS, divisor n − 1).
+    maior, menor = maximo(lista), minimo(lista)
+    amp = amplitude(lista)
+    s2 = variancia(lista)
+    s = desvio_padrao(lista)
+    cv = coeficiente_variacao(lista)
 
-    # Quantis: pandas usa por padrão interpolação 'linear' (tipo 7 de Hyndman &
-    # Fan, o mesmo do Excel QUARTIL.INC e do R padrão).
-    q1, q2, q3 = serie.quantile([0.25, 0.50, 0.75])
+    # c) Separatrizes (função manual, interpolação linear = tipo 7 de Hyndman & Fan).
+    q1, q2, q3 = quantil(lista, 0.25), quantil(lista, 0.50), quantil(lista, 0.75)
     aiq = q3 - q1
     lim_sup_atipico = q3 + 1.5 * aiq
-    percentis = {f"P{int(p * 100)}": float(serie.quantile(p)) for p in PERCENTIS_ALERTA}
+    percentis = {f"P{int(p * 100)}": quantil(lista, p) for p in PERCENTIS_ALERTA}
+
+    # Conferência: cada função manual precisa bater com o pandas.
+    conferir("média", x_barra, serie.mean())
+    conferir("mediana", md, serie.median())
+    contagem = serie.value_counts()
+    conferir("moda (frequência)", freq_max, contagem.max())
+    if modas_brutas != sorted(float(v) for v in contagem[contagem == contagem.max()].index):
+        raise ValueError("moda: manual ≠ pandas")
+    conferir("máximo", maior, serie.max())
+    conferir("mínimo", menor, serie.min())
+    conferir("variância", s2, serie.var(ddof=1))
+    conferir("desvio padrão", s, serie.std(ddof=1))
+    conferir("Q1", q1, serie.quantile(0.25))
+    conferir("Q2", q2, serie.quantile(0.50))
+    conferir("Q3", q3, serie.quantile(0.75))
+    for p in PERCENTIS_ALERTA:
+        conferir(f"P{int(p * 100)}", percentis[f"P{int(p * 100)}"], serie.quantile(p))
 
     return {
         "n": n,
-        "media": float(media), "mediana": float(mediana),
+        "media": x_barra, "mediana": md,
         "moda_czuber": czuber["moda_czuber"], "moda_bruta": modas_brutas,
         "moda_bruta_frequencia": freq_max,
         "detalhe_czuber": czuber,
-        "maximo": float(maximo), "minimo": float(minimo), "amplitude": float(maximo - minimo),
-        "variancia": float(variancia), "desvio_padrao": float(desvio),
-        "cv_pct": float(cv), "cv_classificacao": classificar_cv(cv),
-        "Q1": float(q1), "Q2": float(q2), "Q3": float(q3), "AIQ": float(aiq),
-        "limite_superior_atipicos": float(lim_sup_atipico),
+        "maximo": maior, "minimo": menor, "amplitude": amp,
+        "variancia": s2, "desvio_padrao": s,
+        "cv_pct": cv, "cv_classificacao": classificar_cv(cv),
+        "Q1": q1, "Q2": q2, "Q3": q3, "AIQ": aiq,
+        "limite_superior_atipicos": lim_sup_atipico,
         "n_atipicos_acima": int((serie > lim_sup_atipico).sum()),
         "assimetria": float(serie.skew()),
         **percentis,
